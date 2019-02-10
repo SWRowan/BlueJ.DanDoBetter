@@ -1,4 +1,3 @@
- 
 
 /**
  * Created by dan on 6/14/17.
@@ -34,7 +33,8 @@ public class StringUtilities {
      * @return the first 3 characters of `input`
      */
     public static String getPrefix(String input){
-        return input.length() < 3 ? input : input.substring(0, 3);
+        
+        return input.substring(0,3);
     }
 
     /**
@@ -42,7 +42,7 @@ public class StringUtilities {
      * @return the last 3 characters of `input`
      */
     public static String getSuffix(String input){
-        return input.length() < 3 ? input : input.substring(2, input.length());
+        return input.substring(2, input.length());
     }
 
     /**
@@ -60,23 +60,20 @@ public class StringUtilities {
      */
     public static Character getMiddleCharacter(String inputValue){
         if(inputValue.length() % 2 == 0){
-        int stringLength = inputValue.length();
-        int middle = stringLength/2 -1;
-        char c = inputValue.charAt(middle);
-        return c;
-    } else {
-        int stringLength = inputValue.length();
-        int middle = stringLength/2;
-        char c = inputValue.charAt(middle);
-        return c;
+            char c = inputValue.charAt(inputValue.length()/2 -1);
+            return c;
+        } else {
+            char c = inputValue.charAt(inputValue.length()/2);
+            return c;
+        }
     }
-}
+
     /**
      * @param spaceDelimitedString a string, representative of a sentence, containing spaces
      * @return the first sequence of characters
      */
     public static String getFirstWord(String spaceDelimitedString){
-        String arr[] = spaceDelimitedString.split(" ", spaceDelimitedString.length());
+        String arr[] = spaceDelimitedString.split(" ");
         String firstWord = arr[0];
         return firstWord;
     }
@@ -86,7 +83,7 @@ public class StringUtilities {
      * @return the second word of a string delimited by spaces.
      */
     public static String getSecondWord(String spaceDelimitedString){
-        String arr[] = spaceDelimitedString.split(" ", spaceDelimitedString.length());
+        String arr[] = spaceDelimitedString.split(" ");
         String secondWord = arr[1];
         return secondWord;
     }
@@ -98,10 +95,14 @@ public class StringUtilities {
     public static String reverse(String stringToReverse){
         String reverse = "";
         for (int j = stringToReverse.length() -1; j >= 0 ; j--){
-          reverse = reverse + stringToReverse.charAt(j);
+            reverse = reverse + stringToReverse.charAt(j);
         }
         return reverse;
-         
-        }
+
     }
+
+    public static void main(String[] args){
+
+    }
+}
 
